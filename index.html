@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" ng-app="reminder">
+<head>
+	<meta charset="UTF-8">
+	<title>reminders</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/angular.js"></script>
+	<script src="js/index.js"></script>
+</head>
+<body ng-controller="mainCtrl">
+	<div class="lists">
+		<div class="title">
+			<p class="logo">
+				
+			</p>
+			<p>
+				<a href="javascript:;">
+					提醒事项
+<!-- 					<span id="xia"></span> -->
+				</a>
+			</p>
+			<a class="add" href="javascript:;" ng-click="addItm()">
+				+
+			</a>
+		</div>
+		<ul class="plan">
+			<li class="plan-title">
+				<div class="logo">
+				</div>
+				<div class="item">
+					已计划
+				</div>
+			</li>
+			<li class="plan-list" ng-repeat="v in items" ng-click="setCurrent($index)" ng-class="{currentbg:v===currentItm}">
+				<div class="dot" ng-class="v.theme">
+				</div>
+				<div class="items">
+					{{v.name}}
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="detail" >
+		<div class="search">
+			<form action="">
+				<input type="text" placeholder="搜索所有提醒">
+			</form>
+			<div class="sslg">
+			</div>
+<!-- 			<div class="myss">
+			</div> -->
+		</div>
+		<div class="xq" ng-class="currentItm.textColor">
+			<div class="caption">
+				<h1>
+					{{currentItm.name}}
+				</h1>
+				<h6>
+					选项
+				</h6>
+				<div class="slideBox">
+					
+				</div>
+			</div>
+			<div class="finish">
+				<span></span>
+				<div class="fin-l">
+					已完成
+				</div>
+				<div class="fin-item" ng-repeat="v in currentItm.xq" ng-show="v.state">
+					<div class="dot" ng-click="v.state=!v.state" ng-class="currentItm.theme"></div>
+					{{v.name}}
+				</div>
+			</div>
+			<div class="finish">
+				<span></span>
+				<div class="fin-l">
+					待完成
+				</div>
+				<div class="fin-item" ng-repeat="v in currentItm.xq" ng-show="!v.state">
+					<div class="dot" ng-class="currentItm.theme" ng-click="v.state=!v.state"></div>
+					{{v.name}}
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
