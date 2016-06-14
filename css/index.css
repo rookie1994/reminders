@@ -198,7 +198,30 @@ form input{
 .caption .slideBox{
 	width: 360px;
 	height: 234px;
-	
+	background:#fff;
+	position: absolute;
+	border-radius: 5px;
+	padding: 20px 0 0 20px;
+	border:1px solid #ccc;
+	right: 60px;
+	top:-26px;
+	z-index: 1;
+}
+.caption .slideBox .del{
+	position: absolute;
+	color: red;
+	bottom: 20px;
+	left: 20px;
+	cursor: pointer;
+	font-size: 18px;
+}
+.caption .slideBox .cancel{
+	position: absolute;
+	color: blue;
+	bottom: 20px;
+	right: 20px;
+	cursor: pointer;
+	font-size: 18px;
 }
 .detail .xq .finish{
 	height: auto;

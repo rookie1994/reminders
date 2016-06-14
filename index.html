@@ -50,16 +50,21 @@
 <!-- 			<div class="myss">
 			</div> -->
 		</div>
-		<div class="xq" ng-class="currentItm.textColor">
+		<div class="xq" ng-class="currentItm.textColor" ng-init="kaiguan=false">
 			<div class="caption">
 				<h1>
 					{{currentItm.name}}
 				</h1>
-				<h6>
+				<h6 ng-click="kaiguan=!kaiguan">
 					选项
 				</h6>
-				<div class="slideBox">
-					
+				<div class="slideBox" ng-show="kaiguan">
+					<span class="del" ng-click="sc()">
+						删除
+					</span>
+					<span class="cancel" ng-click="kaiguan=false">
+						取消
+					</span>
 				</div>
 			</div>
 			<div class="finish">

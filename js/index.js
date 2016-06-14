@@ -39,4 +39,10 @@ reminder.controller('mainCtrl',['$scope',function($scope){
 	$scope.setCurrent=function(index){
 		$scope.currentItm=$scope.items[index];
 	}
+	$scope.sc=function(){
+		$scope.items=$scope.items.filter(function(d){
+			return d.id!=$scope.currentItm.id;
+		})
+		$scope.currentItm=$scope.items[0];
+	}
 }])
